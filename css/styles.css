@@ -227,6 +227,21 @@ address { font-style: normal; color: var(--mountain); font-size: 0.95rem; }
   .unit { grid-template-columns: 0.95fr 1.05fr; gap: 2.25rem; min-height: calc(100vh - var(--header-h) - 90px); }
 }
 
+.unit-gallery {
+  display: grid;
+  gap: 0.85rem;
+}
+@media (min-width: 560px) {
+  .unit-gallery { grid-template-columns: 1fr 1fr; }
+}
+.unit-photo figcaption {
+  margin: 0;
+  padding: 0.55rem 0.75rem 0.7rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--mountain);
+  background: var(--white);
+}
 .unit-photo {
   margin: 0;
   border-radius: var(--radius);
@@ -238,6 +253,10 @@ address { font-style: normal; color: var(--mountain); font-size: 0.95rem; }
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  background: var(--mist);
+}
+.unit-photo:nth-child(2) img {
+  aspect-ratio: 4 / 3;
 }
 
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.1rem 0 1.35rem; }
