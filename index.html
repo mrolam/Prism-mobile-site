@@ -14,62 +14,47 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Prism Mobile home">
-        <img class="brand-mark" src="assets/logo-mark.svg" alt="" width="48" height="26" />
-        <span class="brand-text">
-          <span class="brand-name">Prism</span>
-          <span class="brand-sub">Mobile</span>
-        </span>
+      <a class="brand" href="#panel-home" data-tab="home" aria-label="Prism Mobile home">
+        <span class="brand-word">Prism<span class="brand-mobile">Mobile</span></span>
       </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#work">What we do</a>
-        <a href="#contact" class="btn btn-accent">Get a quote</a>
-      </nav>
+      <div class="tabs" role="tablist" aria-label="Site sections">
+        <button class="tab is-active" role="tab" id="tab-home" aria-selected="true" aria-controls="panel-home" data-tab="home" type="button">Home</button>
+        <button class="tab" role="tab" id="tab-unit" aria-selected="false" aria-controls="panel-unit" data-tab="unit" type="button">The unit</button>
+        <button class="tab" role="tab" id="tab-contact" aria-selected="false" aria-controls="panel-contact" data-tab="contact" type="button">Contact</button>
+      </div>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <img
-        class="hero-photo"
-        src="assets/exterior-dusk.jpg"
-        alt="Prism Mobile handwash trailer staged in open country with mountains at dusk"
-        width="1920"
-        height="1080"
-        fetchpriority="high"
-      />
-      <div class="hero-veil"></div>
-      <div class="container hero-copy">
-        <p class="eyebrow">PRISM MOBILE LLC</p>
-        <h1>Handwashing trailers for crews and camps</h1>
-        <p class="lead">
-          Type&nbsp;1 (12+ sink) units. Fire season: Ogden, UT / Great Basin.
-          Off-season: construction, film &amp; events in LA / Southern California.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-accent btn-lg" href="#contact">Request a quote</a>
-          <a class="btn btn-light btn-lg" href="mailto:mitch@prismmobileusa.com">Email Mitch</a>
+  <main class="panels">
+    <section class="panel is-active" id="panel-home" role="tabpanel" aria-labelledby="tab-home">
+      <div class="hero">
+        <img
+          class="hero-photo"
+          src="assets/exterior-dusk.jpg"
+          alt="Prism Mobile handwash trailer staged in open country with mountains at dusk"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        />
+        <div class="hero-veil"></div>
+        <div class="container hero-copy">
+          <p class="eyebrow">PRISM MOBILE LLC</p>
+          <h1>Handwashing trailers for crews and camps</h1>
+          <p class="lead">
+            Type&nbsp;1 (12+ sink) units. Fire season: Ogden, UT / Great Basin.
+            Off-season: LA / Southern California.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-accent btn-lg" type="button" data-tab="contact">Get a quote</button>
+            <button class="btn btn-light btn-lg" type="button" data-tab="unit">See the unit</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="work">
-      <div class="container split">
-        <div class="split-copy">
-          <p class="eyebrow accent-cyan">The unit</p>
-          <h2>Stainless multi-sink bay, trailer-mounted</h2>
-          <p>
-            Delivered and staged where crews need it — fire camps, jobsites,
-            and location compounds. Preparing for Forest Service VIPR I-BPA
-            handwash work; private rentals year-round in SoCal.
-          </p>
-          <ul class="chips">
-            <li>Ogden · fire season</li>
-            <li>LA / SoCal · private</li>
-            <li>Catering partners welcome</li>
-          </ul>
-        </div>
-        <figure class="split-photo">
+    <section class="panel" id="panel-unit" role="tabpanel" aria-labelledby="tab-unit" hidden>
+      <div class="container unit">
+        <figure class="unit-photo">
           <img
             src="assets/interior-sinks.jpeg"
             alt="Four stainless sinks with mirrors and dispensers inside the trailer"
@@ -78,15 +63,30 @@
             loading="lazy"
           />
         </figure>
+        <div class="unit-copy">
+          <p class="eyebrow accent-cyan">The unit</p>
+          <h2>Stainless multi-sink bay</h2>
+          <p>
+            Trailer-mounted handwashing delivered and staged for fire camps,
+            jobsites, and film compounds. Preparing for Forest Service VIPR
+            I-BPA work; private rentals in SoCal.
+          </p>
+          <ul class="chips">
+            <li>Ogden · fire season</li>
+            <li>LA / SoCal · private</li>
+            <li>Catering partners welcome</li>
+          </ul>
+          <button class="btn btn-accent" type="button" data-tab="contact">Request availability</button>
+        </div>
       </div>
     </section>
 
-    <section class="section band" id="contact">
+    <section class="panel" id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
       <div class="container contact">
         <div>
           <p class="eyebrow accent-amber">Contact</p>
-          <h2>Tell us dates and location</h2>
-          <p>We’ll reply with availability. No rates listed here.</p>
+          <h2>Dates and location</h2>
+          <p>We’ll reply with availability. No rates on this site.</p>
           <ul class="emails">
             <li><a href="mailto:mitch@prismmobileusa.com">mitch@prismmobileusa.com</a></li>
             <li><a href="mailto:benjamin@prismmobileusa.com">benjamin@prismmobileusa.com</a></li>
@@ -133,14 +133,8 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand brand-foot" href="#top" aria-label="Prism Mobile home">
-        <img class="brand-mark" src="assets/logo-mark.svg" alt="" width="40" height="22" />
-        <span class="brand-text">
-          <span class="brand-name">Prism</span>
-          <span class="brand-sub">Mobile</span>
-        </span>
-      </a>
-      <p>&copy; <span id="year"></span> PRISM MOBILE LLC · Preparing for VIPR work — no claimed awards.</p>
+      <p class="brand-word brand-word--foot">Prism<span class="brand-mobile">Mobile</span></p>
+      <p>&copy; <span id="year"></span> PRISM MOBILE LLC</p>
     </div>
   </footer>
 
