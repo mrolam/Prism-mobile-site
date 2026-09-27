@@ -111,13 +111,12 @@
             La Habra, CA 90631
           </address>
         </div>
-        <form class="quote-form" id="quote-form" method="POST" action="https://formsubmit.co/mitch@prismmobileusa.com">
-          <input type="hidden" name="_subject" value="Prism Mobile quote request" />
-          <input type="hidden" name="_cc" value="benjamin@prismmobileusa.com" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://prismmobileusa.com/?sent=1#quote" />
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" />
+        <form class="quote-form" id="quote-form" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="d1bdccf4-aaed-4702-9f64-4cc0a429b815" />
+          <input type="hidden" name="subject" value="Prism Mobile Quote Request" />
+          <input type="hidden" name="from_name" value="Prism Mobile Website" />
+          <input type="hidden" name="redirect" value="https://prismmobileusa.com/?sent=1" />
+          <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" style="display:none" />
           <label>
             <span>Name *</span>
             <input type="text" name="name" required autocomplete="name" />

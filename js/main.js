@@ -83,7 +83,7 @@
       return;
     }
 
-    if (/formsubmit\.co|formspree\.io/i.test(action)) return;
+    if (/web3forms\.com|formsubmit\.co|formspree\.io/i.test(action)) return;
 
     e.preventDefault();
     var body = encodeURIComponent(
