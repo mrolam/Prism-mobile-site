@@ -329,6 +329,7 @@ address { font-style: normal; color: var(--mountain); font-size: 0.95rem; }
 }
 .form-hint { min-height: 1.2em; margin: 0; font-size: 0.9rem; color: var(--mountain); }
 .form-hint.error { color: #b42318; }
+.form-hint.success { color: var(--cyan-deep); }
 
 .site-footer {
   padding: 1.1rem 0 1.4rem;

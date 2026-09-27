@@ -48,22 +48,26 @@
     });
   });
 
+  var sent = /(?:^|&)sent=1(?:&|$)/.test((location.search || "").replace(/^\?/, ""));
   var hash = (location.hash || "").replace(/^#/, "");
   if (hash === "panel-home") hash = "home";
   if (hash === "panel-unit" || hash === "unit") hash = "unit";
   if (hash === "panel-contact" || hash === "contact" || hash === "quote") hash = "contact";
   if (hash === "work") hash = "unit";
-  showTab(panels[hash] ? hash : "home");
+  showTab(sent ? "contact" : (panels[hash] ? hash : "home"));
 
   var form = document.getElementById("quote-form");
   var statusEl = document.getElementById("form-status");
   if (!form) return;
 
+  if (sent && statusEl) {
+    statusEl.classList.remove("error");
+    statusEl.classList.add("success");
+    statusEl.textContent = "Thanks — your request was sent. We’ll be in touch soon.";
+  }
+
   form.addEventListener("submit", function (e) {
     var action = (form.getAttribute("action") || "").trim();
-    if (/formspree\.io/i.test(action)) return;
-
-    e.preventDefault();
     var fd = new FormData(form);
     var data = {};
     fd.forEach(function (value, key) {
@@ -71,6 +75,7 @@
     });
 
     if (!data.name || !data.phone || !data.email) {
+      e.preventDefault();
       if (statusEl) {
         statusEl.classList.add("error");
         statusEl.textContent = "Name, email, and phone are required.";
@@ -78,6 +83,9 @@
       return;
     }
 
+    if (/formsubmit\.co|formspree\.io/i.test(action)) return;
+
+    e.preventDefault();
     var body = encodeURIComponent(
       [
         "Prism Mobile Quote Request",
